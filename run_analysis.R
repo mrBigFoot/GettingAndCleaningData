@@ -8,8 +8,8 @@
 ##                            -Project-                                 ##
 ##                                                                      ##
 ##########################################################################
+##                         -Read In Data-                               ##
 
-cdir<-getwd()
 
 if (!exists("haveData")){
   
@@ -36,8 +36,6 @@ cbind(subject_test,y_test,test_x)->test_x
 merged_data<-rbind(train_x,test_x)
 names(merged_data)<-c("subject","activity",as.character(features))
 
-setwd(cdir)
-
 ## Part (2): Extract mean and standard deviation from measurements
 ##           mean and std ambiguous in question so as per course chat 
 ##           room disambguate with mean and std columns regarded as ending 
@@ -45,6 +43,7 @@ setwd(cdir)
 
 grepl("mean()",names(merged_data),fixed=T)->mean_colms
 grepl("std()",names(merged_data),fixed=T)->std_colms
+
 #use index for columns we want
 index<-mean_colms|std_colms
 index[1:2]<-c(1,1)
@@ -74,5 +73,6 @@ names(summarized_data)<-tolower(names(summarized_data))
 
 # Following rules for tidy data remove brackets,dashes and repetiton of "body"
 names(summarized_data)<-gsub("[\\(\\)|-]","",names(summarized_data))
- 
+
 summarized_data
+write.table(summarized_data,"C:\\Users\\Robert Winfield\\Desktop\\2014\\Couresera 2015\\Getting and Cleaning Data\\Project\\Data\\UCI HAR Dataset\\summarized_data.txt")
