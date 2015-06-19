@@ -35,5 +35,5 @@ The R script to perform the required analysis can be found in run_analysis.R
 Note the run_analysis.md provides further support information on top of existing comments in 
 its accompanying R file.
 
-The Databook provides information on how the data names have been modified in accordance with tidy data
+The _Databook.md_ provides information on how the data names have been modified in accordance with tidy data
 principles. Backgound information on the dataset and its originating source can be found there too.
