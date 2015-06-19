@@ -10,7 +10,7 @@
 ##########################################################################
 ```
 
-__Part__(0): Read in data.
+__Part__ (0): Read in data.
  
 Note _haveData_ allows the script to run repeatedly without having to wait
 for the large training and test data feels to download. Use the command rm(haveData) at the command line 
