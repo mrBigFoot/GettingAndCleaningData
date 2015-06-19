@@ -31,6 +31,7 @@ In connection with the above requirements the following artifacts have been made
  * __run_analysis.md__
 
 The R script to perform the required analysis can be found in run_analysis.R
+
 Note the run_analysis.md provides further support information on top of existing comments in 
 its accompanying R file.
 
