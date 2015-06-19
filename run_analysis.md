@@ -12,10 +12,9 @@
 
 __Part__(0): Read in data.
  
-###### Note _haveData_ allows the script to run repeatedly without having to wait
-###### for the large training and test data feels to download
-###### Use the command rm(haveData) at the command line and the read table
-###### commands will again be invoked.
+Note _haveData_ allows the script to run repeatedly without having to wait
+for the large training and test data feels to download. Use the command rm(haveData) at the command line 
+and the read table commands will again be invoked.
 
 ```
 if (!exists("haveData")){
@@ -38,10 +37,10 @@ names(actions)<-c("Code","Description")
 
 ```
 
-###### __Part__ (1): Merge the test and training data together.
-###### There are several ways in which this could have been done
-###### but cbinding subject columns and then column binding the
-###### the two constituent data sets seemed a direct way.
+__Part__ (1): Merge the test and training data together.
+There are several ways in which this could have been done
+but cbinding subject columns and then column binding the
+the two constituent data sets seemed a direct way.
 
 ```
 cbind(subject_train,y_train,train_x)->train_x
@@ -52,12 +51,11 @@ names(merged_data)<-c("subject","activity",as.character(features))
 ```
 
 
-###### __Part (2)__: Extract mean and standard deviation from measurements
-###### mean and std ambiguous in question so as per course chat room 
-###### disambguate with mean and std columns regarded as ending in mean() or std()
-###### These terms also occur at other positions without accompanying brackets. These
-###### have been excluded by a personal interpretation left available for the author 
-###### to make.
+__Part (2)__: Extract mean and standard deviation from measurements
+mean and std ambiguous in question so as per course chat room 
+disambguate with mean and std columns regarded as ending in mean() or std()
+These terms also occur at other positions without accompanying brackets. These
+have been excluded by a personal interpretation left available for the author to make.
       
 ```
 grepl("mean()",names(merged_data),fixed=T)->mean_colms
@@ -67,7 +65,7 @@ index<-mean_colms|std_colms
 index[1:2]<-c(1,1)
 merged_data<-merged_data[,as.logical(index)] # extract mean and std colms
 ```
-###### __Parts(3+4)__: Use descriptive activity names for the activities and
+__Parts(3+4)__: Use descriptive activity names for the activities and
 ###### appropriately label data set with descriptive variable names.
 
 ```
@@ -77,31 +75,31 @@ gsub('_','',merged_data$activity)->merged_data$activity
 gsub("BodyBody","",names(merged_data))->names(merged_data) # removes error in data
 
 ```
-###### __Part(5)__: From the data set in part(4) create an independent tidy data set with
-###### average of each variable for each activity and subject. Note some values are
-###### negative and it could be argued that they should have their sign removed before
-###### averaging. But as no mention was made of this in the assignment question this has 
-###### not been done.
+__Part(5)__: From the data set in part(4) create an independent tidy data set with
+average of each variable for each activity and subject. Note some values are
+negative and it could be argued that they should have their sign removed before
+averaging. But as no mention was made of this in the assignment question this has 
+not been done.
 
 ```
 require(plyr) ## needed to ddply to work
 
 ```
 
-###### Generate summarized data
+Generate summarized data
 
 ```
 summarized_data<-ddply(merged_data,.(subject,activity),function(x) colMeans(x[,3:length(names(x))])) #replace duplicates with means
 
 names(summarized_data)<-tolower(names(summarized_data))
 ```
-###### Following rules for tidy data remove brackets,dashes 
+Following rules for tidy data remove brackets,dashes 
 
 ```
 names(summarized_data)<-gsub("[\\(\\)|-]","",names(summarized_data))
 
 ```
-###### Show summarized_data
+Show summarized_data
 ```
 summarized_data
 ``` 
