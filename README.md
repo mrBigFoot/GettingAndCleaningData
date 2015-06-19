@@ -36,4 +36,4 @@ Note the run_analysis.md provides further support information on top of existing
 its accompanying R file.
 
 The Databook provides information on how the data names have been modified in accordance with tidy data
-principles.
+principles. Backgound information on the dataset and its originating source can be found there too.
