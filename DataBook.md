@@ -79,10 +79,11 @@ Notes:
 
 For more information about this dataset contact: activityrecognition@smartlab.ws
 
-__Tidy Data Modifications__
+__Tidy Data Modifications/Transformations__
 
-Activity lables:-
-Cleaned activity labels put into lowercase, spaces and hyphens removed
+Activity labels:-
+Cleaned activity labels put into lowercase, spaces and hyphens removed.
+Note: These were used to replace the activity codes (the number before the descriptor).
 
 ```
 1 walking
@@ -93,7 +94,7 @@ Cleaned activity labels put into lowercase, spaces and hyphens removed
 6 laying
 
 ```
- Cleaned Features:-
+Cleaned Features:-
 All letters put in lowercase and both hyphens and brackets retracted. Only features needed for the analysis cleaned.
 
 ```
