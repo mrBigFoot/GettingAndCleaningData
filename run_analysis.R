@@ -75,4 +75,4 @@ names(summarized_data)<-tolower(names(summarized_data))
 names(summarized_data)<-gsub("[\\(\\)|-]","",names(summarized_data))
 
 summarized_data
-write.table(summarized_data,"C:\\Users\\Robert Winfield\\Desktop\\2014\\Couresera 2015\\Getting and Cleaning Data\\Project\\Data\\UCI HAR Dataset\\summarized_data.txt")
+ 
