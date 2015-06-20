@@ -79,7 +79,17 @@ Notes:
 
 For more information about this dataset contact: activityrecognition@smartlab.ws
 
-__Tidy Data Modifications/Transformations__
+__Transformation Process__
+
+This consists of 5 parts:
+
+1) Merges the training and the test sets to create one data set.
+2) Extracts only the measurements on the mean and standard deviation for each measurement.
+3) Uses descriptive activity names to name the activities in the data set
+4) Appropriately labels the data set with descriptive activity names.
+5) Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+__Tidy Data Modifications__
 
 Activity labels:-
 Cleaned activity labels put into lowercase, spaces and hyphens removed.
