@@ -22,7 +22,7 @@ From the data set in step 4, creates a second, independent tidy data set with th
 
 In connection with the above requirements the following artifacts have been made avaiable in the repository
 
- * __DataBook.md__
+ * __CodeBook.md__
  * __run_analysis.R__
  * __run_analysis.md__
 
@@ -31,7 +31,7 @@ The R script to perform the required analysis can be found in run_analysis.R
 Note the run_analysis.md provides further support information on top of existing comments in 
 its accompanying R file.
 
-The _Databook.md_ provides information on how the data names have been modified in accordance with tidy data
+The _CodeBook.md_ provides information on how the data names have been modified in accordance with tidy data
 principles. Backgound information on the dataset and its originating source can be found there too.
 
 Please see _run_analysis.md_ for information on how the script works
