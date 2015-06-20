@@ -83,12 +83,24 @@ __Transformation Process__
 
 This consists of 5 parts:
 
-1) Merges the training and the test sets to create one data set.
-2) Extracts only the measurements on the mean and standard deviation for each measurement.
+1) The training and test sets are merged to create one data set.
+
+2) Mean and standard deviation extracted for each measurement.
+
 3) Uses descriptive activity names to name the activities in the data set
+
 4) Appropriately labels the data set with descriptive activity names.
+
 5) Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
+__How does runAnalysis.R achieve the above steps__
+
+- Training and test data loaded
+- The above data is then merged
+- The averaging in step 5 is achieved using the **plyr** package. In particular the ddply function is used to achieve averaging by variable,by activity and subject in one call.
+
+_See run_analysis.md and run_analysis.R for fuller more detailed information_
+  
 __Tidy Data Modifications__
 
 Activity labels:-
