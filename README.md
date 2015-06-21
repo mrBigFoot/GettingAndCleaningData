@@ -32,6 +32,6 @@ Note the run_analysis.md provides further support information on top of existing
 its accompanying R file.
 
 The _CodeBook.md_ provides information on how the data names have been modified in accordance with tidy data
-principles. Backgound information on the dataset and its originating source can be found there too.
+principles together with how the transformations and summaries are done. Backgound information on the dataset and its originating source can be found there too.
 
 Please see _run_analysis.md_ for information on how the script works
